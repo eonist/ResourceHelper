@@ -4,19 +4,24 @@ import Foundation
  * - Abstract: Searces for the locatio of package.swift to find root URL
  */
 public class ResourceHelper {
+   private static let projectRef: String?
    /**
     * We only need to generate this one time
     */
    private static let rootURL: URL = {
-      guard let rootURL: URL = rootDir(file: #file) else { fatalError("\(#file) must be contained in a Swift Package Manager project.") }
+      guard guard let projectRef = projectRef, let rootURL: URL = rootDir(file: projectRef) else { fatalError("\(projectRef) must be contained in a Swift Package Manager project.") }
       return rootURL
    }()
    /**
     * Finds project root url
     * ## Examples
-    * ResourceUtil.projectRootURL(fileName: "payload.json").path // /Users/John/Documents/AwesomeApp/payload.json
+    * ResourceUtil.projectRootURL(projectRef: #file, fileName: "payload.json").path // /Users/John/Documents/AwesomeApp/payload.json
+    * - Parameters:
+    *    - projectRef: the #file must be declared from the calller, or else you get the location of this repo
+    *    - fileName: name of the file to get url for
     */
-   public static func projectRootURL(fileName: String) -> URL {
+   public static func projectRootURL(projectRef: String, fileName: String) -> URL {
+      ResourceHelper.projectRef = projectRef
       return rootURL.appendingPathComponent("\(fileName)", isDirectory: false)
    }
 }
