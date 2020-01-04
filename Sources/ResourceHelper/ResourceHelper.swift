@@ -4,12 +4,12 @@ import Foundation
  * - Abstract: Searces for the locatio of package.swift to find root URL
  */
 public class ResourceHelper {
-   private static let projectRef: String?
+   private static var projectRef: String?
    /**
     * We only need to generate this one time
     */
    private static let rootURL: URL = {
-      guard guard let projectRef = projectRef, let rootURL: URL = rootDir(file: projectRef) else { fatalError("\(projectRef) must be contained in a Swift Package Manager project.") }
+      guard let projectRef = projectRef, let rootURL: URL = rootDir(file: projectRef) else { fatalError("\(projectRef) must be contained in a Swift Package Manager project.") }
       return rootURL
    }()
    /**
