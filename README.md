@@ -8,7 +8,7 @@
 Enables you to use .bundle and other resources with SPM Unit-tests
 
 ### Installation:
-- SPM: `.url("github.com/eonist/ResourceHelper.git"), branch("master")`
+- SPM: `.url("https://github.com/eonist/ResourceHelper.git"), branch("master")`
 
 ### Examples:
 
