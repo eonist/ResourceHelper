@@ -1,7 +1,7 @@
 import Foundation
 /**
  * Enables you to use .bundle and other resources with SPM Unit-tests
- * - Abstract: Searces for the locatio of package.swift to find root URL
+ * - Abstract: Searces for the location of package.swift to find root URL
  */
 public class ResourceHelper {
    private static var projectRef: String?
@@ -14,8 +14,9 @@ public class ResourceHelper {
    }()
    /**
     * Finds project root url
+    * - Fixme: ⚠️️ Maybe add optional resource subfolder parameter: "/Assets/Bundles/" etc
     * ## Examples
-    * ResourceUtil.projectRootURL(projectRef: #file, fileName: "payload.json").path // /Users/John/Documents/AwesomeApp/payload.json
+    * ResourceHelper.projectRootURL(projectRef: #file, fileName: "payload.json").path // /Users/John/Documents/AwesomeApp/payload.json
     * - Parameters:
     *    - projectRef: the #file must be declared from the calller, or else you get the location of this repo
     *    - fileName: name of the file to get url for
