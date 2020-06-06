@@ -14,12 +14,12 @@ public class ResourceHelper {
    }()
    /**
     * Finds project root url
-    * - Fixme: ⚠️️ Maybe add optional resource subfolder parameter: "/Assets/Bundles/" etc
-    * ## Examples
-    * ResourceHelper.projectRootURL(projectRef: #file, fileName: "payload.json").path // /Users/John/Documents/AwesomeApp/payload.json
     * - Parameters:
     *    - projectRef: the #file must be declared from the calller, or else you get the location of this repo
     *    - fileName: name of the file to get url for
+    * ## Examples
+    * ResourceHelper.projectRootURL(projectRef: #file, fileName: "payload.json").path // /Users/John/Documents/AwesomeApp/payload.json
+    * - Fixme: ⚠️️ Maybe add optional resource subfolder parameter: "/Assets/Bundles/" etc
     */
    public static func projectRootURL(projectRef: String, fileName: String) -> URL {
       ResourceHelper.projectRef = projectRef
@@ -37,7 +37,7 @@ extension ResourceHelper {
       var url = URL(fileURLWithPath: file, isDirectory: false)
       repeat {
          url = url.deletingLastPathComponent()
-         if url.pathComponents.count <= 1 { return nil } // - Fixme: ⚠️️ use guard here instead ?
+         guard url.pathComponents.count > 1 else { return nil }
       } while !isRootDir(url: url)
       return url
    }
