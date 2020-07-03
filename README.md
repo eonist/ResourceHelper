@@ -14,5 +14,5 @@ Enables you to use .bundle and other resources with SPM Unit-tests
 ### Examples:
 
 ```swift
-ResourceUtil.projectRootURL(projectRef: #file, fileName: "payload.json").path // /Users/John/Documents/AwesomeApp/payload.json
+ResourceHelper.projectRootURL(projectRef: #file, fileName: "payload.json").path // /Users/John/Documents/AwesomeApp/payload.json
 ```
