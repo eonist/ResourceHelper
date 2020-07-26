@@ -1,4 +1,4 @@
-name: Swift
+name: Builds
 
 on: 
   push: #   [push, pull_request]:
