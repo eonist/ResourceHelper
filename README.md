@@ -3,7 +3,7 @@
 ![Lang](https://img.shields.io/badge/Language-Swift%205.12-orange.svg)
 [![SPM compatible](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://github.com/apple/swift)
 ![Builds](https://github.com/eonist/ResourceHelper/workflows/Builds/badge.svg)
-[![codebeat badge](https://codebeat.co/badges/6704b945-11ad-43ad-b290-ebe32edd04f0)](https://codebeat.co/projects/github-com-eonist-resourcehelper-master)
+[![codebeat badge](https://codebeat.co/badges/ccf5ea3a-46e7-4922-ae04-3168a07641b4)](https://codebeat.co/projects/github-com-eonist-resourcehelper-master)
 
 # Features
 - Enables you to use .bundle and other resources with SPM Unit-tests. (Perfect for Github action CI)
