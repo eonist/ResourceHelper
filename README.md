@@ -13,6 +13,7 @@
 ```swift
 // The temp.bundle folder can be in the root of your project (same directory as your `Package.swift`)
 // iOS can only add resources inside .bundle folders
+// macOS can only read files within its SandBox. Turn off Sandbox in info.plist (Using swift 5.3 and native spm assets is a better option here)
 let path: String = ResourceHelper.projectRootURL(projectRef: #file, fileName: "temp.bundle/payload.json").path
 Swift.print("path:  \(path)") // Users/John/Documents/AwesomeApp/temp.bundle/payload.json
 ```
