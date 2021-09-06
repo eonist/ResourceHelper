@@ -10,7 +10,7 @@ public class ResourceHelper {
     */
    private static let rootURL: URL = {
       guard let projectRef = projectRef else { fatalError("⚠️️ \(ResourceHelper.projectRef ?? "") must be contained in a Swift Package Manager project.") }
-      guard let rootURL: URL = rootDir(file: projectRef) else { fatalError("⚠️️ Unable to create URL") }
+      guard let rootURL: URL = rootDir(file: projectRef) else { fatalError("⚠️️ Unable to create URL for: \(projectRef)") }
       return rootURL
    }()
    /**
